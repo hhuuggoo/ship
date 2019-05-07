@@ -69,11 +69,11 @@ locals {
   "worker_groups" = [{{range .AutoscalingGroups}}
     {
       name                 = "{{.Name}}"
-      asg_min_size         = "{{.GroupSize}}"
-      asg_max_size         = "{{.GroupSize}}"
-      asg_desired_capacity = "{{.GroupSize}}"
+      asg_min_size         = "{{.GroupMinSize}}"
+      asg_max_size         = "{{.GroupMaxSize}}"
+      asg_desired_capacity = "{{.GroupDesiredSize}}"
       instance_type        = "{{.MachineType}}"
-
+      autoscaling_enabled  = "{{.AutoscalingEnabled}}"
       subnets = "${join(",", local.eks_vpc_private_subnets)}"
     },{{end}}
   ]

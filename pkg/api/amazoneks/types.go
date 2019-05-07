@@ -16,5 +16,6 @@ type EKSExistingVPC struct {
 type EKSAutoscalingGroup struct {
 	Name        string `json:"name,omitempty" yaml:"name,omitempty" hcl:"name,omitempty"`
 	GroupSize   string `json:"group_size,omitempty" yaml:"group_size,omitempty" hcl:"group_size,omitempty"`
+    AutoscalingEnabled   bool `json:"autoscaling_enabled,omitempty" yaml:"autoscaling_enabled,omitempty" hcl:"autoscaling_enabled,omitempty"`
 	MachineType string `json:"machine_type,omitempty" yaml:"machine_type,omitempty" hcl:"machine_type,omitempty"`
 }
